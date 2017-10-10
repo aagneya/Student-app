@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block "jumbotron" %}
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/Login/">AddNew</a></li>
+                <li><a href="/Details/">Details</a></li>
+                <li><a href="/post/new/">Register</a></li>
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<header id="home" class="home">
+<div class="overlay sections">
+<div class="container">
+
+  <div class="row">
+    <div class="wrapper">
+      <div class="col-md-6 col-md-offset-3">
+
+        <div class="home-details text-center">
+
+          <h1 >New Student</h1>
+          <form method="POST" class="form">{% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit" class="save btn btn-default">Save</button>
+          </form>
+
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</header>
+
+{% endblock %}
